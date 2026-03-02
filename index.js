@@ -1,9 +1,9 @@
 // ===== 1) Данные персонала (меняй под себя) =====
 const staff = [
-  { name: "Omer", role: "Roll / Titel", email: "omer@bawabet-amel.com" },
-  { name: "Salih", role: "Roll / Titel", email: "salih@bawabet-amel.com" },
-  { name: "Mohammed", role: "Roll / Titel", email: "mohammed@bawabet-amel.com" },
-  { name: "Abdulkadir", role: "Service", email: "service@bawabet-amel.com", highlight: true }
+  { name: "Jaber", role: "Roll / Titel", email: "Jaber@bawabet-amel.com" },
+  { name: "Peier", role: "Roll / Titel", email: "Peier@bawabet-amel.com" },
+  { name: "Jon", role: "Roll / Titel", email: "jon@bawabet-amel.com" },
+  { name: "Iliza", role: "Service", email: "Iliza@bawabet-amel.com", highlight: true }
 ];
 
 // ===== 2) Рендер карточек персонала =====

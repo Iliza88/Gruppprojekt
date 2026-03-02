@@ -7,7 +7,7 @@
         body {
             padding: 0;
             margin: 0;
-            background: #f5f7f3;
+            background: #0327f1;
         }
 
         .booking-wrap {
@@ -216,12 +216,12 @@
                 </div>
 
                 <div class="field">
-                    <label for="packageType">Valj paket</label>
+                    <label for="packageType">Valj tänsten</label>
                     <select id="packageType" name="packageType" required>
                         <option value="">Valj ett paket</option>
-                        <option value="Weekend" data-price="1499">Weekendpaket - 1499 kr/person</option>
-                        <option value="Kulturresa" data-price="2499">Kulturresa - 2499 kr/person</option>
-                        <option value="Safari" data-price="3999">Safari - 3999 kr/person</option>
+                        <option value="Skolan" data-price="1499">skolan - 1499 kr/person</option>
+                        <option value="Kulter" data-price="2499">Kulter- 2499 kr/person</option>
+                        <option value="Brolop" data-price="3999">- 3999 kr/person</option>
                     </select>
                 </div>
 
@@ -235,16 +235,16 @@
                     <div class="payment-options">
                         <label class="payment-option"><input type="radio" name="paymentMethod" value="Kort" checked>
                             Kort
-                            (demo)</label>
+                            </label>
                         <label class="payment-option"><input type="radio" name="paymentMethod" value="Swish"> Swish
-                            (demo)</label>
+                            </label>
                         <label class="payment-option"><input type="radio" name="paymentMethod" value="Faktura"> Faktura
-                            (demo)</label>
+                            </label>
                     </div>
                 </div>
 
                 <div class="field full">
-                    <label for="message">Meddelande / onskemal</label>
+                    <label for="message">Meddelande</label>
                     <textarea name="message" id="message" placeholder="Skriv extra info om bokningen..."></textarea>
                 </div>
             </div>
@@ -269,10 +269,6 @@
                 <span>Jag godkanner bokningsvillkor och jag vill betala.</span>
             </label>
 
-            <!---- <div class="warning">
-        Riktig betalning (Stripe/Klarna/Swish API) kraver backend och API-nycklar. Denna version sparar bokningen lokalt
-        i webblasaren.
-      </div> -->
 
             <button type="submit" class="lab2">Boka och kop</button>
 
