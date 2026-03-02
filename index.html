@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iliza AB</title>
+
+  <!-- Kopplar in din CSS -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <!-- Topp/hero -->
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Iliza AB</h1>
+
+      <!-- Navigering (Hem/Projekt/Kontakt) -->
+      <nav class="hero__nav">
+        <a href="#hem">Hem</a>
+        <a href="#projekt">Projekt</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Om oss + personal -->
+    <section id="hem" class="panel">
+      <h2>About Us</h2>
+      <p class="muted">
+        Här skriver du en kort presentation av företaget, vision, historia och värderingar.
+      </p>
+
+      <div class="section-head">
+        <h3>Contact our staff</h3>
+      </div>
+
+      <!-- Personal-kort skapas av JavaScript -->
+      <div id="staffGrid" class="grid"></div>
+    </section>
+
+    <!-- Service / Bokning -->
+    <section id="projekt" class="panel">
+      <h2>Service</h2>
+      <p class="muted">Beskriv vad företaget erbjuder.</p>
+
+      <form id="serviceForm" class="form">
+        <div class="form__row">
+          <label for="bookingDate">Bokningsdatum</label>
+          <input id="bookingDate" type="date" required />
+        </div>
+
+        <div class="form__row">
+          <label for="customerName">Namn</label>
+          <input id="customerName" type="text" placeholder="Ditt namn" required />
+        </div>
+
+        <div class="form__row">
+          <label for="customerMsg">Meddelande</label>
+          <textarea id="customerMsg" placeholder="Vad behöver du hjälp med?" required></textarea>
+        </div>
+
+        <button class="btn" type="submit">Boka service</button>
+        <p id="serviceStatus" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="panel">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:info@bawabet-amel.com">info@bawabet-amel.com</a></p>
+      <p>Telefon: <a href="tel:+4600000000">000-000 00 00</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">© 2026 Bawabet-Amel</footer>
+
+  <!-- Kopplar in din JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>
