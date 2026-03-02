@@ -1,0 +1,383 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokning och köp</title>
+    <link rel="stylesheet" href="pro.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #f5f7f3;
+        }
+
+        .booking-wrap {
+            max-width: 860px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        .booking-card {
+            border: none;
+            border-radius: 14px;
+            padding: 26px;
+            background-color: rgba(119, 255, 0, 0.14);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        .booking-card h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .payment-options {
+            display: grid;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .payment-option input {
+            width: auto;
+            margin: 0;
+        }
+
+        .summary {
+            margin-top: 18px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #dfe6d8;
+            padding: 14px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 6px 0;
+        }
+
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 18px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .lab2 {
+            padding: 12px;
+            width: 100%;
+            font-size: 18px;
+            border-radius: 8px;
+            background-color: green;
+            color: white;
+            border: none;
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        .lab2:hover {
+            background-color: rgb(64, 226, 64);
+            cursor: pointer;
+        }
+
+        .muted {
+            color: #4b4b4b;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .checkbox-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .checkbox-line input {
+            width: auto;
+            margin-top: 2px;
+        }
+
+        .result {
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 8px;
+            background: #eaf9e5;
+            border: 1px solid #b4dfac;
+            display: none;
+        }
+
+        .warning {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fff6d8;
+            border: 1px solid #f0d87a;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="item_upp">
+        <header>
+            <img src="afrika-logo.jpg" alt="afrika-logo" class="afrika-logo" width="140" height="140">
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="Aboutus.html">About us</a></li>
+                <li><a href="info.html">Information</a></li>
+                <li><a href="#" style="background: black; color: white; cursor: default;">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="booking-wrap">
+        <form id="bookingForm" class="booking-card">
+            <h1>Bokning och kop</h1>
+            <p class="muted">Fyll i formularet nedan for att boka och genomfora ett kop (demo i frontend).</p>
+
+            <div class="grid">
+                <div class="field">
+                    <label for="fullName">Fullstandigt namn</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John tirre" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">E-post</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="070000000" required>
+                </div>
+
+                <div class="field">
+                    <label for="travelDate">Bokningsdatum</label>
+                    <input type="date" id="travelDate" name="travelDate" required>
+                </div>
+
+                <div class="field">
+                    <label for="packageType">Valj paket</label>
+                    <select id="packageType" name="packageType" required>
+                        <option value="">Valj ett paket</option>
+                        <option value="Weekend" data-price="1499">Weekendpaket - 1499 kr/person</option>
+                        <option value="Kulturresa" data-price="2499">Kulturresa - 2499 kr/person</option>
+                        <option value="Safari" data-price="3999">Safari - 3999 kr/person</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="guests">Antal personer</label>
+                    <input type="number" id="guests" name="guests" min="1" max="20" value="1" required>
+                </div>
+
+                <div class="field full">
+                    <label>Betalningsmetod</label>
+                    <div class="payment-options">
+                        <label class="payment-option"><input type="radio" name="paymentMethod" value="Kort" checked>
+                            Kort
+                            (demo)</label>
+                        <label class="payment-option"><input type="radio" name="paymentMethod" value="Swish"> Swish
+                            (demo)</label>
+                        <label class="payment-option"><input type="radio" name="paymentMethod" value="Faktura"> Faktura
+                            (demo)</label>
+                    </div>
+                </div>
+
+                <div class="field full">
+                    <label for="message">Meddelande / onskemal</label>
+                    <textarea name="message" id="message" placeholder="Skriv extra info om bokningen..."></textarea>
+                </div>
+            </div>
+
+            <section class="summary" aria-live="polite">
+                <div class="summary-row">
+                    <span>Pris per person</span>
+                    <strong id="pricePerPerson">0 kr</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Antal personer</span>
+                    <strong id="guestCount">1</strong>
+                </div>
+                <div class="summary-row total">
+                    <span>Totalt att betala</span>
+                    <strong id="totalPrice">0 kr</strong>
+                </div>
+            </section>
+
+            <label class="checkbox-line">
+                <input type="checkbox" id="terms" required>
+                <span>Jag godkanner bokningsvillkor och jag vill betala.</span>
+            </label>
+
+            <!---- <div class="warning">
+        Riktig betalning (Stripe/Klarna/Swish API) kraver backend och API-nycklar. Denna version sparar bokningen lokalt
+        i webblasaren.
+      </div> -->
+
+            <button type="submit" class="lab2">Boka och kop</button>
+
+            <div id="bookingResult" class="result"></div>
+        </form>
+    </main>
+
+    <footer class="foot">
+        <p>&copy; 2025 Min Hemsida. Alla rattigheter för copy.</p>
+    </footer>
+
+    <script>
+        (function () {
+            const form = document.getElementById("bookingForm");
+            const packageType = document.getElementById("packageType");
+            const guests = document.getElementById("guests");
+            const travelDate = document.getElementById("travelDate");
+            const pricePerPersonEl = document.getElementById("pricePerPerson");
+            const guestCountEl = document.getElementById("guestCount");
+            const totalPriceEl = document.getElementById("totalPrice");
+            const resultEl = document.getElementById("bookingResult");
+
+            const today = new Date();
+            const isoToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split("T")[0];
+            travelDate.min = isoToday;
+
+            function formatPrice(value) {
+                return Number(value || 0).toLocaleString("sv-SE") + " kr";
+            }
+
+            function getSelectedPrice() {
+                const option = packageType.options[packageType.selectedIndex];
+                return option ? Number(option.dataset.price || 0) : 0;
+            }
+
+            function updateSummary() {
+                const price = getSelectedPrice();
+                const count = Math.max(1, Number(guests.value || 1));
+                const total = price * count;
+
+                pricePerPersonEl.textContent = formatPrice(price);
+                guestCountEl.textContent = String(count);
+                totalPriceEl.textContent = formatPrice(total);
+            }
+
+            packageType.addEventListener("change", updateSummary);
+            guests.addEventListener("input", updateSummary);
+            updateSummary();
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (!form.reportValidity()) {
+                    return;
+                }
+
+                const selectedDate = new Date(travelDate.value + "T00:00:00");
+                const now = new Date();
+                now.setHours(0, 0, 0, 0);
+
+                if (selectedDate < now) {
+                    alert("Valj ett bokningsdatum idag eller senare.");
+                    return;
+                }
+
+                const paymentMethod = form.querySelector('input[name="paymentMethod"]:checked').value;
+                const price = getSelectedPrice();
+                const count = Math.max(1, Number(guests.value || 1));
+                const total = price * count;
+                const bookingId = "BK-" + Date.now().toString().slice(-8);
+
+                const booking = {
+                    bookingId: bookingId,
+                    fullName: form.fullName.value.trim(),
+                    email: form.email.value.trim(),
+                    phone: form.phone.value.trim(),
+                    travelDate: form.travelDate.value,
+                    packageType: form.packageType.value,
+                    guests: count,
+                    paymentMethod: paymentMethod,
+                    message: form.message.value.trim(),
+                    total: total,
+                    createdAt: new Date().toISOString()
+                };
+
+                const existing = JSON.parse(localStorage.getItem("bookings") || "[]");
+                existing.push(booking);
+                localStorage.setItem("bookings", JSON.stringify(existing));
+
+                resultEl.style.display = "block";
+                resultEl.innerHTML =
+                    "<strong>Bokning skapad!</strong><br>" +
+                    "Bokningsnummer: <strong>" + bookingId + "</strong><br>" +
+                    "Paket: " + booking.packageType + "<br>" +
+                    "Datum: " + booking.travelDate + "<br>" +
+                    "Betalning: " + booking.paymentMethod + " (demo)<br>" +
+                    "Total: <strong>" + formatPrice(total) + "</strong>";
+
+                form.reset();
+                guests.value = 1;
+                travelDate.min = isoToday;
+                updateSummary();
+            });
+        })();
+    </script>
+</body>
+
+</html>
