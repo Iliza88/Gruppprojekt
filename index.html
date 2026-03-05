@@ -8,45 +8,96 @@
 
   <!-- Kopplar in din CSS -->
   <link rel="stylesheet" href="index.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-  <!-- Topp/hero -->
-  <header class="hero">
-    <div class="hero__inner">
-      <h1 class="hero__title">Iliza AB</h1>
 
-      <!-- Navigering (Hem/Projekt/Kontakt) -->
-      <nav class="hero__nav">
-        <a href="#hem">Home</a>
-        <a href="#projekt">tjänsten</a>
-        <a href="contakt.html">Kontakt</a>
-      </nav>
+
+  <!-- nav med boostrap -->
+  <nav class="navbar navbar-custom navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand title-text" href="index.html">Iliza AB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Menu">Menu</button>
+      <div class="collapse navbar-collapse" id="Menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link tilte-text" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link tilte-text" href="#">Tjänster</a></li>
+          <li class="nav-item"><a class="nav-link tilte-text" href="contakt.html">Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link tilte-text" href="#">Om Oss</a></li>
+
+        </ul>
+
+      </div>
+
+
     </div>
-  </header>
+
+  </nav>
+
 
   <main class="container">
-    <!-- Om oss + personal -->
+    <!-- Om oss och vara  personal -->
 
 
-    <section id="hem" class="panel">
+    <section id="hem" class="Ilza">
       <h2>About Us</h2>
-      <p class="muted">
-        Här skriver du en kort presentation av företaget, vision, historia och värderingar.
+      <p class="jaber">
+
+        Vi jobbar med transport, service till skolor och uthyrning av bröllopslokaler, och vi har vuxit till att bli en
+        av de största och mest pålitliga i området. Vi satsar på bra kvalitet, ansvar och ett bra bemötande, och därför
+        litar både privatpersoner och organisationer på oss.
+        Vi kör transporter som folk kan räkna med, hjälper skolor med det de behöver i vardagen och erbjuder en populär
+        lokal för bröllop och andra stora dagar. Vårt rykte bygger på att vi gör jobbet ordentligt och alltid sätter
+        kunden först.
+
       </p>
 
       <div class="section-head">
         <h3>Contact our staff</h3>
       </div>
 
-      <!-- Personal-kort skapas av JavaScript -->
-      <div id="staffGrid" class="grid"></div>
+      <!--  JavaScript -->
+      <div id="staffGrid" class="pro1"></div>
     </section>
 
     <!-- Service / Bokning -->
-    <section id="projekt" class="panel">
+    <section id="projekt" class="Ilza">
       <h2>Service</h2>
-      <p class="muted">Beskriv vad företaget erbjuder.</p>
+      <p class="Jaber">Varas företaget erbjuder.</p>
+      <p>1 Transportservice
+        Trygga och pålitliga transporter för privatpersoner och företag, med fokus på punktlighet och god service.</p>
+      <img
+        src="https://www.trbc.se/uploads/1v6Y1ove/png-transparent-iveco-stralis-iveco-daily-car-iveco-trakker-car-freight-transport-truck-car.png"
+        alt="">
+      <br>________________________________________________________________________________</br>
+
+
+
+
+
+
+
+      <p>2Service till skolor Stöd med logistik, material, leveranser och aktiviteter som bidrar till en trygg och
+        fungerande skolmiljö.
+      </p>
+      <img src="https://mndaily.com/wp-content/uploads/2016/11/110716stafrodelifile.JPG" alt="">
+
+
+
+      <p>3Uthyrning av bröllopslokal
+        En festlokal för bröllop och andra högtider, med möjlighet till dekoration, möblering och planeringshjälp för
+        att skapa minnesvärda upplevelser.
+      </p>
+      <img
+        src="https://bröllopslokaler.nu/storage/2023/02/hasslarpsparken-brollop-brollopslokal-festlokal-skane-3-_Custom_.webp"
+        alt="">
+
+
+
+
+      </p>
 
       <form id="serviceForm" class="form">
         <div class="form__row">
@@ -69,7 +120,7 @@
       </form>
     </section>
 
-    <!-- Kontakt -->
+    <!-- Kontakt Oss -->
     <section id="kontakt" class="panel">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:info@bawabet-amel.com">info@Iliza AB-jabe.com</a></p>
@@ -81,6 +132,9 @@
 
   <!-- Kopplar in din JavaScript -->
   <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
