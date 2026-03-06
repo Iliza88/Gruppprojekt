@@ -292,7 +292,11 @@ textarea:focus {
   border: 1px solid #f0d87a;
   border-radius: 8px;
 }
-
+img{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
 .booking-page .foot {
   color: #fff;
   text-align: center;
