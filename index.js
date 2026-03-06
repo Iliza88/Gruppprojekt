@@ -1,12 +1,12 @@
-// ===== 1) Данные персонала (меняй под себя) =====
+
 const staff = [
-  { name: "Omer", role: "Roll / Titel", email: "omer@bawabet-amel.com" },
-  { name: "Salih", role: "Roll / Titel", email: "salih@bawabet-amel.com" },
-  { name: "Mohammed", role: "Roll / Titel", email: "mohammed@bawabet-amel.com" },
-  { name: "Abdulkadir", role: "Service", email: "service@bawabet-amel.com", highlight: true }
+  { name: "Jaber", role: "Roll / Titel", email: "Jaber@bawabet-amel.com" },
+  { name: "Peier", role: "Roll / Titel", email: "Peier@bawabet-amel.com" },
+  { name: "Jon", role: "Roll / Titel", email: "jon@bawabet-amel.com" },
+  { name: "Iliza", role: "Service", email: "Iliza@bawabet-amel.com", highlight: true }
 ];
 
-// ===== 2) Рендер карточек персонала =====
+// ===== Personaluppgifter =====
 function renderStaff() {
   const grid = document.getElementById("staffGrid");
   if (!grid) return;
@@ -17,7 +17,7 @@ function renderStaff() {
     const card = document.createElement("div");
     card.className = "staff-card";
 
-    // можно визуально выделить "service contact"
+    
     if (person.highlight) card.style.border = "2px solid #222";
 
     card.innerHTML = `
@@ -30,7 +30,7 @@ function renderStaff() {
 
     const btn = card.querySelector("button");
     btn.addEventListener("click", () => {
-      // Вариант 1: открыть mailto
+     
       const subject = encodeURIComponent(`Message for ${person.name}`);
       const body = encodeURIComponent(`Hi ${person.name},\n\n`);
       window.location.href = `mailto:${person.email}?subject=${subject}&body=${body}`;
@@ -42,7 +42,7 @@ function renderStaff() {
 
 renderStaff();
 
-// ===== 3) Плавная прокрутка по меню =====
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", (e) => {
     const id = link.getAttribute("href");
@@ -54,14 +54,18 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ===== 4) Service booking: дата + валидация + "отправка" =====
+// ===== Servicebokning =====
+// Den här delen av koden hanterar servicebokningen.
+// Den hämtar formuläret och fälten (datum, kundens namn och meddelande)
+// från HTML och används för validering och för att skicka bokningen.
+
 const serviceForm = document.getElementById("serviceForm");
 const bookingDate = document.getElementById("bookingDate");
 const customerName = document.getElementById("customerName");
 const customerMsg = document.getElementById("customerMsg");
 const serviceStatus = document.getElementById("serviceStatus");
 
-// запретим выбирать прошлые даты
+// förhindra att man väljer tidigare datum
 if (bookingDate) {
   const today = new Date();
   const yyyy = today.getFullYear();
